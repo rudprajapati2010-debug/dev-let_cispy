@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin | Let_cipsy</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1210; --panel: rgba(14, 28, 24, 0.9); --text: #e8f5f0;
+    --muted: #8aada0; --teal: #2dd4a8; --cyan: #22d3ee; --line: rgba(255,255,255,0.08);
+    --danger: #ff6b8a; --success: #6ee7a8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse 70% 50% at 50% -20%, rgba(45,212,168,0.16), transparent 55%), var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, sans-serif;
+  }
+  .login-wrap {
+    min-height: 100vh; display: grid; place-items: center; padding: 24px;
+  }
+  .box {
+    width: min(400px, 100%);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 36px 28px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  }
+  .box img { width: 56px; height: 56px; border-radius: 14px; display: block; margin: 0 auto 16px; }
+  .box h1 { font-family: "Space Grotesk", sans-serif; text-align: center; font-size: 1.3rem; margin-bottom: 6px; }
+  .box .sub { text-align: center; color: var(--muted); font-size: 0.88rem; margin-bottom: 22px; }
+  label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; }
+  input {
+    width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line);
+    background: rgba(0,0,0,0.35); color: var(--text); font-size: 0.95rem; margin-bottom: 14px; outline: none;
+  }
+  input:focus { border-color: var(--teal); }
+  .btn {
+    width: 100%; padding: 13px; border: none; border-radius: 12px;
+    background: linear-gradient(135deg, var(--teal), var(--cyan));
+    color: #06201a; font-weight: 600; cursor: pointer; font-size: 0.95rem;
+  }
+  .btn:hover { filter: brightness(1.05); }
+  .error {
+    background: rgba(255,107,138,0.12); border: 1px solid rgba(255,107,138,0.3);
+    color: var(--danger); padding: 10px; border-radius: 10px; font-size: 0.85rem;
+    text-align: center; margin-bottom: 14px;
+  }
+  .hint { margin-top: 16px; text-align: center; font-size: 0.75rem; color: var(--muted); opacity: 0.75; }
+  .hidden { display: none !important; }
+
+  header {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    padding: 16px 22px; border-bottom: 1px solid var(--line); background: rgba(7,12,10,0.85);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: "Space Grotesk", sans-serif; font-weight: 600; }
+  .brand img { width: 32px; height: 32px; border-radius: 8px; }
+  .meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .badge {
+    background: linear-gradient(135deg, var(--teal), var(--cyan)); color: #06201a;
+    padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;
+  }
+  .linkbtn {
+    padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line);
+    color: var(--muted); text-decoration: none; font-size: 0.85rem; background: transparent; cursor: pointer;
+  }
+  .linkbtn:hover { color: var(--teal); border-color: var(--teal); }
+  main { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+  h2 { font-family: "Space Grotesk", sans-serif; font-size: 1.4rem; }
+  .msg {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    padding: 18px 20px; margin-bottom: 12px;
+  }
+  .msg.unread { border-color: rgba(45,212,168,0.45); }
+  .msg-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+  .msg-name { font-weight: 600; }
+  .msg-email { color: var(--teal); font-size: 0.9rem; }
+  .msg-time { font-size: 0.8rem; color: var(--muted); }
+  .msg-subject { font-size: 0.9rem; color: var(--muted); margin-bottom: 8px; }
+  .msg-body { white-space: pre-wrap; line-height: 1.55; margin-bottom: 12px; }
+  .msg-footer { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .tag {
+    font-size: 0.72rem; padding: 3px 9px; border-radius: 99px;
+    background: rgba(45,212,168,0.15); color: var(--teal); border: 1px solid rgba(45,212,168,0.25);
+  }
+  .tag.new { background: rgba(110,231,168,0.15); color: var(--success); border-color: rgba(110,231,168,0.3); }
+  .empty { text-align: center; padding: 50px 20px; color: var(--muted); border: 1px solid var(--line); border-radius: 16px; }
+  .sm { padding: 6px 12px; font-size: 0.8rem; width: auto; border-radius: 8px; }
+  .danger:hover { color: var(--danger); border-color: var(--danger); }
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginView" class="login-wrap">
+  <div class="box">
+    <img src="images/logo-128.png" alt="">
+    <h1>Secure Portal</h1>
+    <p class="sub">Enter access code to view messages</p>
+    <div id="loginError" class="error hidden"></div>
+    <form id="loginForm" autocomplete="off">
+      <label for="code">Access Code</label>
+      <input type="password" id="code" required placeholder="••••••••••••" autofocus>
+      <button type="submit" class="btn">Unlock Dashboard</button>
+    </form>
+    <p class="hint">Code only · Authorized access</p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashView" class="hidden">
+  <header>
+    <div class="brand">
+      <img src="images/logo-64.png" alt="">
+      Let_cipsy Admin
+    </div>
+    <div class="meta">
+      <span class="badge hidden" id="unreadBadge">0 new</span>
+      <a class="linkbtn" href="index.html">← Site</a>
+      <button class="linkbtn" type="button" id="logoutBtn">Logout</button>
+    </div>
+  </header>
+  <main>
+    <div class="topbar">
+      <h2>Inbox</h2>
+      <div>
+        <button class="linkbtn" type="button" id="refreshBtn">Refresh</button>
+        <button class="linkbtn" type="button" id="markAllBtn">Mark all read</button>
+      </div>
+    </div>
+    <div id="msgList"></div>
+  </main>
+</div>
+
+<script>
+const CODE_KEY = 'lc_admin_code';
+const API = '/.netlify/functions/messages';
+
+function getCode() { return sessionStorage.getItem(CODE_KEY) || ''; }
+
+async function api(method, body) {
+  const opts = {
+    method,
+    headers: {
+      'Content-Type': 'application/json',
+      'x-admin-code': getCode()
+    }
+  };
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(API, opts);
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || 'Request failed');
+  return data;
+}
+
+function showLogin(err) {
+  document.getElementById('loginView').classList.remove('hidden');
+  document.getElementById('dashView').classList.add('hidden');
+  const el = document.getElementById('loginError');
+  if (err) { el.textContent = err; el.classList.remove('hidden'); }
+  else el.classList.add('hidden');
+}
+
+function showDash() {
+  document.getElementById('loginView').classList.add('hidden');
+  document.getElementById('dashView').classList.remove('hidden');
+  loadMessages();
+}
+
+function renderMessages(list) {
+  const box = document.getElementById('msgList');
+  const unread = (list || []).filter(m => !m.is_read).length;
+  const badge = document.getElementById('unreadBadge');
+  if (unread > 0) {
+    badge.textContent = unread + ' new';
+    badge.classList.remove('hidden');
+  } else badge.classList.add('hidden');
+
+  if (!list || !list.length) {
+    box.innerHTML = '<div class="empty"><p style="font-size:1.1rem;margin-bottom:8px">No messages yet</p><p>Messages from the contact form will appear here after deploy.</p></div>';
+    return;
+  }
+
+  box.innerHTML = list.map(m => `
+    <div class="msg ${m.is_read ? '' : 'unread'}">
+      <div class="msg-head">
+        <div>
+          <div class="msg-name">${escapeHtml(m.name)}</div>
+          <a class="msg-email" href="mailto:${escapeHtml(m.email)}">${escapeHtml(m.email)}</a>
+        </div>
+        <div class="msg-time">${escapeHtml(m.created_at || '')}</div>
+      </div>
+      <div class="msg-subject"><strong>Subject:</strong> ${escapeHtml(m.subject || '—')}</div>
+      <div class="msg-body">${escapeHtml(m.message || '')}</div>
+      <div class="msg-footer">
+        ${m.service ? `<span class="tag">${escapeHtml(m.service)}</span>` : ''}
+        ${!m.is_read ? `<span class="tag new">NEW</span>
+          <button class="linkbtn sm" type="button" data-read="${m.id}">Mark read</button>` : ''}
+        <button class="linkbtn sm danger" type="button" data-del="${m.id}">Delete</button>
+      </div>
+    </div>
+  `).join('');
+
+  box.querySelectorAll('[data-read]').forEach(btn => {
+    btn.onclick = async () => {
+      try {
+        const data = await api('POST', { action: 'mark_read', id: btn.dataset.read });
+        renderMessages(data.messages);
+      } catch (e) { alert(e.message); }
+    };
+  });
+  box.querySelectorAll('[data-del]').forEach(btn => {
+    btn.onclick = async () => {
+      if (!confirm('Delete this message?')) return;
+      try {
+        const data = await api('POST', { action: 'delete', id: btn.dataset.del });
+        renderMessages(data.messages);
+      } catch (e) { alert(e.message); }
+    };
+  });
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+async function loadMessages() {
+  try {
+    const data = await api('GET');
+    renderMessages(data.messages || []);
+  } catch (e) {
+    document.getElementById('msgList').innerHTML =
+      `<div class="empty"><p>${escapeHtml(e.message)}</p>
+       <p style="margin-top:10px;font-size:0.9rem">If this is a fresh deploy, send a test message from the site first.
+       Functions need a successful Netlify deploy (not only local file open).</p></div>`;
+  }
+}
+
+document.getElementById('loginForm').onsubmit = async (e) => {
+  e.preventDefault();
+  const code = document.getElementById('code').value.trim();
+  sessionStorage.setItem(CODE_KEY, code);
+  try {
+    await api('GET');
+    showDash();
+  } catch (err) {
+    sessionStorage.removeItem(CODE_KEY);
+    showLogin(err.message || 'Invalid access code');
+  }
+};
+
+document.getElementById('logoutBtn').onclick = () => {
+  sessionStorage.removeItem(CODE_KEY);
+  showLogin();
+};
+document.getElementById('refreshBtn').onclick = () => loadMessages();
+document.getElementById('markAllBtn').onclick = async () => {
+  try {
+    const data = await api('POST', { action: 'mark_all' });
+    renderMessages(data.messages);
+  } catch (e) { alert(e.message); }
+};
+
+// Auto unlock if session exists
+if (getCode()) {
+  api('GET').then(() => showDash()).catch(() => {
+    sessionStorage.removeItem(CODE_KEY);
+    showLogin();
+  });
+}
+</script>
+</body>
+</html>

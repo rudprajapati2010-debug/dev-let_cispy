@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Let_cipsy | Web & Discord Bot Developer</title>
+<meta name="description" content="Let_cipsy — Web developer & Discord bot developer. Modern websites, powerful Discord bots and custom digital experiences built with clean code.">
+<meta name="keywords" content="Let_cipsy, web developer, Discord bot developer, Python, Java, HTML, responsive websites, custom bots">
+<meta name="author" content="Let_cipsy">
+<meta name="theme-color" content="#0a1210">
+<meta property="og:title" content="Let_cipsy | Web & Discord Bot Developer">
+<meta property="og:description" content="Building modern websites, powerful Discord bots and custom code that stands out.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Let_cipsy | Web & Discord Bot Developer">
+<meta name="twitter:description" content="Modern websites, Discord bots and custom code.">
+<link rel="icon" href="images/favicon.ico" sizes="any">
+<link rel="icon" href="logo-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="logo-128.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<!-- Advanced layers -->
+<div id="bg-orbs" aria-hidden="true">
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+</div>
+<canvas id="particles" aria-hidden="true"></canvas>
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div id="noise" aria-hidden="true"></div>
+
+<div id="loader">
+  <div class="loaderbox">
+    <img src="images/logo-128.png" alt="" class="loader-logo" width="80" height="80">
+    <div class="loadertext">> boot sequence · let_cipsy.sys</div>
+    <div class="loaderline"></div>
+  </div>
+</div>
+<div class="progress" id="progress"></div>
+
+<nav id="nav">
+  <a class="brand" href="#home"><img src="images/logo-64.png" alt="Let_cipsy" class="brand-logo" width="32" height="32"> Let_<b>cipsy</b></a>
+  <div class="links" id="links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </div>
+    <div class="navactions">
+    <div class="theme-bar" id="themeBar" title="Color theme">
+      <button type="button" class="swatch" data-palette="teal" title="Teal" style="--s1:#2dd4a8;--s2:#22d3ee"></button>
+      <button type="button" class="swatch" data-palette="violet" title="Violet" style="--s1:#9b5cff;--s2:#3d7cff"></button>
+      <button type="button" class="swatch" data-palette="ocean" title="Ocean" style="--s1:#38bdf8;--s2:#6366f1"></button>
+      <button type="button" class="swatch" data-palette="sunset" title="Sunset" style="--s1:#fb923c;--s2:#f43f5e"></button>
+      <button type="button" class="swatch" data-palette="rose" title="Rose" style="--s1:#f472b6;--s2:#e879f9"></button>
+      <button type="button" class="swatch" data-palette="lime" title="Lime" style="--s1:#a3e635;--s2:#34d399"></button>
+      <button type="button" class="swatch" data-palette="gold" title="Gold" style="--s1:#fbbf24;--s2:#f59e0b"></button>
+      <button type="button" class="swatch" data-palette="mono" title="Mono" style="--s1:#94a3b8;--s2:#e2e8f0"></button>
+    </div>
+    <a href="admin.html" class="admin-access-btn top-admin" title="Admin">🔐 Admin</a>
+    <button class="iconbtn" id="theme" aria-label="Toggle theme">☼</button>
+    <button class="menubtn" id="menu" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="reveal">
+      <span class="eyebrow"><span class="dot"></span> Available for new projects</span>
+      <h1>I build <span class="gradient">digital experiences</span> that stand out.</h1>
+      <p>Crafting modern <span class="typing" id="typing">websites.</span> Fast, responsive, and built around your idea — from clean interfaces to powerful Discord bots that actually help servers grow.</p>
+      <div class="cta">
+        <button class="btn primary" id="hire">Hire Me ↗</button>
+        <a class="btn" href="files/CV_Let_cipsy.pdf" download>Download CV ↓</a>
+        <a class="btn" href="#projects">View Projects</a>
+      </div>
+      <div class="micro">
+        <div>⚡ <span>Fast builds</span></div>
+        <div>✦ <span>Custom code</span></div>
+        <div>⌁ <span>Responsive UI</span></div>
+      </div>
+      <div class="terminal">
+        <div class="termbar">let_cipsy@portfolio — terminal</div>
+        <div class="term" id="term"></div>
+      </div>
+    </div>
+    <div class="idcard" id="idcard">
+      <div class="card" id="card">
+        <div class="idtop"><span>DEVELOPER ID</span><span>LC // 001</span></div>
+        <div class="avatar"><img src="images/logo-128.png" alt="Let_cipsy" width="72" height="72"></div>
+        <h2>LET_CIPSY</h2>
+        <div class="role">WEB & DISCORD BOT DEVELOPER</div>
+        <div class="chips">
+          <span class="chip">PYTHON</span>
+          <span class="chip">JAVA</span>
+          <span class="chip">HTML</span>
+          <span class="chip">AUTOMATION</span>
+        </div>
+        <div class="status-label">STATUS</div>
+        <div class="status-val">● AVAILABLE</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="sectionhead reveal">
+      <div>
+        <div class="kicker">About me</div>
+        <h2>Code with purpose.</h2>
+      </div>
+      <p>I focus on clean interfaces, useful systems, and custom solutions — never one-size-fits-all templates.</p>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><div class="num counter" data-target="8">0</div><div class="label">Project concepts</div></div>
+      <div class="stat reveal"><div class="num counter" data-target="3">0</div><div class="label">Core skills</div></div>
+      <div class="stat reveal"><div class="num counter" data-target="3">0</div><div class="label">Services</div></div>
+      <div class="stat reveal"><div class="num">24/7</div><div class="label">Digital workflow</div></div>
+    </div>
+    <div class="skills-grid">
+      <div class="about-text reveal">
+        <p>I'm Let_cipsy — a web and Discord bot developer who builds modern, fast, and user-friendly digital experiences. Every project starts with understanding your goals, then turning them into clean code and thoughtful design.</p>
+        <p>Whether you need a polished website, a powerful Discord bot, or custom automation, I create solutions that fit your idea instead of forcing it into a template.</p>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-row">
+          <div class="skill-top"><span>Python</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-top"><span>HTML / CSS / UI</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-top"><span>Discord Bots</span><span>92%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-top"><span>Java</span><span>75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-top"><span>Automation</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="sectionhead reveal">
+      <div>
+        <div class="kicker">Services</div>
+        <h2>What I can build.</h2>
+      </div>
+      <p>From a polished website to a custom Discord automation system — each build starts with your idea.</p>
+    </div>
+    <div class="services">
+      <div class="service reveal">
+        <div class="ico">◈</div>
+        <h3>Website Development</h3>
+        <p>Modern responsive websites, landing pages, portfolios, and custom web interfaces built for speed and clarity.</p>
+      </div>
+      <div class="service reveal">
+        <div class="ico">⬡</div>
+        <h3>Discord Bot Development</h3>
+        <p>Powerful bots for moderation, automation, economy systems, dashboards, and unique server experiences.</p>
+      </div>
+      <div class="service reveal">
+        <div class="ico">✦</div>
+        <h3>Custom Code Writing</h3>
+        <p>Tailored scripts, tools, and systems when off-the-shelf solutions aren't enough for your idea.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="sectionhead reveal">
+      <div>
+        <div class="kicker">Showcase</div>
+        <h2>Selected builds.</h2>
+      </div>
+      <p>These are portfolio concepts and demos. Live links can be added when real projects are ready.</p>
+    </div>
+    <div class="projects" id="projectGrid"></div>
+    <div class="showcase" style="margin-top:32px">
+      <div class="big reveal">
+        <div class="kicker">Discord focused</div>
+        <h3>Bots that actually help servers grow.</h3>
+        <p>Moderation, utilities, economy, tickets, dashboards — designed around how real communities work.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">discord.py</span>
+          <span class="tag">Slash commands</span>
+          <span class="tag">Databases</span>
+        </div>
+        <div class="fake-ui">
+          <div class="fakebox" style="height:48px"></div>
+          <div class="fakebox" style="height:48px"></div>
+          <div class="fakebox" style="height:48px"></div>
+        </div>
+      </div>
+      <div class="big reveal">
+        <div class="kicker">Web focused</div>
+        <h3>Interfaces that feel intentional.</h3>
+        <p>Clean layouts, subtle motion, and responsive design so your project looks sharp on every screen.</p>
+        <div class="tags">
+          <span class="tag">HTML / CSS</span>
+          <span class="tag">Responsive</span>
+          <span class="tag">SEO-ready</span>
+          <span class="tag">Fast UI</span>
+        </div>
+        <div class="fake-ui">
+          <div class="fakebox" style="height:48px"></div>
+          <div class="fakebox" style="height:48px"></div>
+          <div class="fakebox" style="height:48px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="sectionhead reveal">
+      <div>
+        <div class="kicker">Process</div>
+        <h2>Simple from idea to launch.</h2>
+      </div>
+      <p>No confusing workflow. We define the idea, build it, test it, and deliver the result.</p>
+    </div>
+    <div class="process">
+      <div class="step reveal"><b>01</b><h3>Discuss</h3><p>Understand the idea, goals, and required features clearly.</p></div>
+      <div class="step reveal"><b>02</b><h3>Plan</h3><p>Choose structure, technology, and visual direction together.</p></div>
+      <div class="step reveal"><b>03</b><h3>Build</h3><p>Develop with clean, responsive code and regular updates.</p></div>
+      <div class="step reveal"><b>04</b><h3>Deliver</h3><p>Test, polish, and hand over the finished project ready to use.</p></div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section>
+    <div class="sectionhead reveal">
+      <div>
+        <div class="kicker">Why work with me</div>
+        <h2>Built around your idea.</h2>
+      </div>
+    </div>
+    <div class="reasons">
+      <div class="reason reveal"><strong>Custom, not copied</strong><p>Your project gets a structure and design matched to its purpose — not a recycled template.</p></div>
+      <div class="reason reveal"><strong>Modern visual style</strong><p>Clean layouts, subtle motion, and a strong visual identity that feels current.</p></div>
+      <div class="reason reveal"><strong>Responsive by default</strong><p>Designed to work smoothly across desktop, tablet, and mobile from day one.</p></div>
+      <div class="reason reveal"><strong>Direct communication</strong><p>Simple contact through Discord or email. No long chains or unnecessary steps.</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="sectionhead reveal">
+      <div>
+        <div class="kicker">Start a project</div>
+        <h2>Have an idea?</h2>
+      </div>
+      <p>Send a message directly — it goes straight to my private inbox. Or reach out via Discord / email.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <form id="contactForm" class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden-field" style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
+        <div class="form-row">
+          <div class="field">
+            <label for="cName">Your Name</label>
+            <input type="text" id="cName" name="name" required placeholder="Alex Rivera" maxlength="80">
+          </div>
+          <div class="field">
+            <label for="cEmail">Email</label>
+            <input type="email" id="cEmail" name="email" required placeholder="you@example.com" maxlength="120">
+          </div>
+        </div>
+        <div class="field">
+          <label for="cSubject">Subject</label>
+          <input type="text" id="cSubject" name="subject" placeholder="Project inquiry / Website / Bot" maxlength="120">
+        </div>
+        <div class="field">
+          <label for="cService">Service (optional)</label>
+          <select id="cService" name="service">
+            <option value="">— Select —</option>
+            <option value="Website Development">Website Development</option>
+            <option value="Discord Bot Development">Discord Bot Development</option>
+            <option value="Custom Code">Custom Code</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cMessage">Message</label>
+          <textarea id="cMessage" name="message" required rows="5" placeholder="Tell me about your idea, features, timeline..." maxlength="5000"></textarea>
+        </div>
+        <button type="submit" class="btn primary full" id="sendBtn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-loading" hidden>Sending…</span>
+        </button>
+        <p class="form-note">Messages are private and only visible to me.</p>
+      </form>
+
+      <div class="contact-side">
+        <div class="side-card">
+          <h3>Prefer direct contact?</h3>
+          <p>Copy my details or open your email client.</p>
+          <div class="cta vertical">
+            <button class="btn primary" id="hire2">Hire Me ↗</button>
+            <button class="btn" id="copyEmail">Copy Email</button>
+            <button class="btn" id="copyDiscord">Copy Discord</button>
+            <a class="btn" href="mailto:rudprajapati2010@gmail.com">Open Email Client</a>
+          </div>
+        </div>
+        <div class="side-card mini">
+          <div class="kicker">Response time</div>
+          <p>Usually within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="footer">
+  <div>© 2026 Let_cipsy. Built with code.</div>
+  <div class="footer-right">
+    <span>Python · Java · HTML · Discord Bots</span>
+    <a href="admin.html" title="View form submissions in Netlify dashboard" class="admin-access-btn" title="Admin Portal">🔐 Admin</a>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="modal">
+  <div class="modalbox">
+    <button id="close" aria-label="Close">✕</button>
+    <h3>Let's build something</h3>
+    <p>Select a service, then send a quick message or use the contact links.</p>
+    <div class="choices">
+      <button class="choice" data-service="Website Development">Website</button>
+      <button class="choice" data-service="Discord Bot Development">Discord Bot</button>
+      <button class="choice" data-service="Custom Code">Custom Code</button>
+    </div>
+    <div id="hireResult">Select a service above to continue.</div>
+    <form id="modalForm" class="modal-form" style="display:none;margin-top:16px">
+      <input type="hidden" id="mService" name="service">
+      <div class="field">
+        <input type="text" id="mName" name="name" required placeholder="Your name" maxlength="80">
+      </div>
+      <div class="field">
+        <input type="email" id="mEmail" name="email" required placeholder="Email" maxlength="120">
+      </div>
+      <div class="field">
+        <textarea id="mMessage" name="message" required rows="3" placeholder="Short project description..." maxlength="2000"></textarea>
+      </div>
+      <button type="submit" class="btn primary full" id="modalSend">Send Message</button>
+    </form>
+    <div class="modal-actions">
+      <button class="btn primary" id="discordHire">Copy Discord</button>
+      <a class="btn" href="mailto:rudprajapati2010@gmail.com">Email Me</a>
+    </div>
+  </div>
+</div>
+
+
+<a href="#contact" class="mascot" title="Hire me">
+  <img src="images/logo-64.png" alt="Let_cipsy">
+  <span class="bubble">Need a bot or website? →</span>
+</a>
+
+<div id="toast"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
+
+/* Loader */
+window.addEventListener('load', () => {
+  setTimeout(() => $('#loader').classList.add('hide'), 1600);
+});
+
+/* Typing effect */
+const roles = ['websites.', 'Discord bots.', 'custom tools.', 'digital experiences.'];
+let ri = 0, ci = 0, deleting = false;
+const typingEl = $('#typing');
+function typeLoop() {
+  const word = roles[ri];
+  if (!deleting) {
+    typingEl.textContent = word.slice(0, ++ci);
+    if (ci === word.length) { deleting = true; setTimeout(typeLoop, 1600); return; }
+  } else {
+    typingEl.textContent = word.slice(0, --ci);
+    if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+  }
+  setTimeout(typeLoop, deleting ? 45 : 85);
+}
+typeLoop();
+
+/* Terminal animation */
+const termLines = [
+  { t: '$ > initializing portfolio...', c: 'cmd' },
+  { t: '$ > loading projects...', c: 'cmd' },
+  { t: '$ > developer.status = "available"', c: 'cmd' },
+  { t: '$ > system.ready ✓', c: 'ok' }
+];
+const term = $('#term');
+termLines.forEach((line, i) => {
+  setTimeout(() => {
+    const d = document.createElement('div');
+    d.className = 'line ' + line.c;
+    d.textContent = line.t;
+    term.appendChild(d);
+  }, 1800 + i * 450);
+});
+
+/* ID card tilt */
+const card = $('#card');
+const idcard = $('#idcard');
+idcard.addEventListener('mousemove', e => {
+  const r = idcard.getBoundingClientRect();
+  const x = (e.clientX - r.left) / r.width - 0.5;
+  const y = (e.clientY - r.top) / r.height - 0.5;
+  card.style.transform = `rotateY(${x * 14}deg) rotateX(${-y * 14}deg)`;
+});
+idcard.addEventListener('mouseleave', () => {
+  card.style.transform = 'rotateY(0) rotateX(0)';
+});
+
+/* Projects data */
+const projects = [
+  { name: 'Obsidian Hearts', desc: 'Concept for a dark-themed community platform with custom dashboard and member tools.', tags: ['Web', 'UI', 'Dashboard'] },
+  { name: 'Tx Vault', desc: 'Secure storage and management interface concept with clean data visualization.', tags: ['Web', 'Python'] },
+  { name: 'LegendaryBot', desc: 'Feature-rich Discord bot concept with economy, levels, and moderation modules.', tags: ['Discord', 'Python'] },
+  { name: 'GENS Bot', desc: 'Utility and automation bot designed for large communities and event servers.', tags: ['Discord', 'Automation'] },
+  { name: 'Creator Dashboard', desc: 'Content creator panel concept for stats, links, and audience management.', tags: ['Web', 'UI'] },
+  { name: 'Server Manager', desc: 'Admin toolkit concept for multi-server Discord management and analytics.', tags: ['Discord', 'Java'] },
+  { name: 'Developer Hub', desc: 'Personal developer portal concept with project showcase and status cards.', tags: ['Web', 'HTML'] },
+  { name: 'Utility Suite', desc: 'Collection of small tools and scripts for everyday automation tasks.', tags: ['Python', 'Tools'] }
+];
+const grid = $('#projectGrid');
+projects.forEach((p, idx) => {
+  const el = document.createElement('div');
+  el.className = 'project reveal';
+  el.style.setProperty('--delay', (idx * 60) + 'ms');
+  el.innerHTML = `
+    <div class="project-preview">
+      <div class="mock">
+        <div class="mock-side"></div>
+        <div class="mock-main">
+          <div class="mock-line" style="width:70%"></div>
+          <div class="mock-line" style="width:90%"></div>
+          <div class="mock-line" style="width:55%"></div>
+          <div class="mock-line" style="width:80%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="project-body">
+      <div class="tag-row">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+    </div>`;
+  el.onclick = () => projectInfo(p.name, p.desc, p.tags.join(' · '));
+  el.addEventListener('mousemove', e => {
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `translateY(-6px) perspective(800px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
+  });
+  el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+  grid.appendChild(el);
+});
+
+function projectInfo(n, d, t) {
+  openModal();
+  $('#hireResult').innerHTML = `<b>${n}</b><br>${d}<br><br>Stack: ${t}<br><br>This is a portfolio/demo concept. Live demo and source links can be added when an actual project URL is available.`;
+}
+
+/* Reveal on scroll */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+}, { threshold: 0.12 });
+$$('.reveal').forEach(x => io.observe(x));
+
+/* Counters */
+const co = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = +el.dataset.target;
+    let n = 0;
+    const step = () => {
+      n += Math.ceil(target / 25);
+      if (n >= target) el.textContent = target;
+      else { el.textContent = n; requestAnimationFrame(step); }
+    };
+    step();
+    co.unobserve(el);
+  });
+}, { threshold: 0.6 });
+$$('.counter').forEach(x => co.observe(x));
+
+/* Skill bars */
+const skillObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.skill-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+      skillObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+$$('.skill-card').forEach(c => skillObs.observe(c));
+
+/* Scroll progress + active nav */
+let scrollTick = false;
+window.addEventListener('scroll', () => {
+  if (scrollTick) return;
+  scrollTick = true;
+  requestAnimationFrame(() => {
+    const total = document.documentElement.scrollHeight - innerHeight;
+    $('#progress').style.width = (scrollY / total * 100) + '%';
+    const sections = [...$$('section[id]')];
+    const cur = sections.findLast(s => scrollY >= s.offsetTop - 160)?.id || 'home';
+    $$('.links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+    scrollTick = false;
+  });
+}, { passive: true });
+
+/* Mobile menu */
+$('#menu').onclick = () => $('#nav').classList.toggle('mobileopen');
+$$('.links a').forEach(a => a.onclick = () => $('#nav').classList.remove('mobileopen'));
+
+/* Theme */
+$('#theme').onclick = () => {
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+  $('#theme').textContent = isLight ? '☾' : '☼';
+  localStorage.theme = isLight ? 'light' : 'dark';
+};
+if (localStorage.theme === 'light') {
+  document.body.classList.add('light');
+  $('#theme').textContent = '☾';
+}
+
+/* Toast + copy */
+function toast(t) {
+  $('#toast').textContent = t;
+  $('#toast').classList.add('show');
+  setTimeout(() => $('#toast').classList.remove('show'), 1600);
+}
+async function copy(t) {
+  try { await navigator.clipboard.writeText(t); toast('Copied ✓'); }
+  catch { toast(t); }
+}
+$('#copyEmail').onclick = () => copy('rudprajapati2010@gmail.com');
+$('#copyDiscord').onclick = () => copy('let_cispy');
+$('#discordHire').onclick = () => copy('let_cispy');
+
+/* Modal */
+function openModal() { $('#modal').classList.add('show'); }
+function closeModal() { $('#modal').classList.remove('show'); }
+$('#hire').onclick = openModal;
+$('#hire2').onclick = openModal;
+$('#close').onclick = closeModal;
+$('#modal').onclick = e => { if (e.target === $('#modal')) closeModal(); };
+$$('.choice').forEach(b => b.onclick = () => {
+  $('#hireResult').innerHTML = `Selected: <b>${b.dataset.service}</b><br><br>Fill the form below or use the contact buttons.`;
+  $('#mService').value = b.dataset.service;
+  $('#modalForm').style.display = 'block';
+});
+
+/* Contact form submit — Netlify Forms */
+async function submitContact(form, btnId) {
+  const btn = $(btnId);
+  const textEl = btn && btn.querySelector('.btn-text');
+  const loadEl = btn && btn.querySelector('.btn-loading');
+  if (textEl) textEl.hidden = true;
+  if (loadEl) loadEl.hidden = false;
+  if (btn) btn.disabled = true;
+
+  const fd = new FormData(form);
+  // Ensure form-name for Netlify
+  if (!fd.get('form-name')) fd.set('form-name', form.getAttribute('name') || 'contact');
+
+  try {
+    // Save to admin inbox (Netlify Function) + Netlify Forms
+    const payload = Object.fromEntries(fd.entries());
+    let ok = false;
+    try {
+      const fnRes = await fetch('/.netlify/functions/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (fnRes.ok) ok = true;
+    } catch (err) {}
+    try {
+      const formRes = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(fd).toString()
+      });
+      if (formRes.ok) ok = true;
+    } catch (err) {}
+    if (ok) {
+      toast('Message sent successfully! I will reply soon.');
+      $('#toast').classList.add('success');
+      form.reset();
+      if (form.id === 'modalForm') {
+        $('#modalForm').style.display = 'none';
+        closeModal();
+      }
+    } else {
+      toast('Something went wrong. Try email instead.');
+      $('#toast').classList.add('error');
+    }
+  } catch (e) {
+    toast('Network error. Try again or email me.');
+    $('#toast').classList.add('error');
+  } finally {
+    if (textEl) textEl.hidden = false;
+    if (loadEl) loadEl.hidden = true;
+    if (btn) btn.disabled = false;
+    setTimeout(() => $('#toast').classList.remove('success', 'error'), 2000);
+  }
+}
+
+$('#contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  submitContact(e.target, '#sendBtn');
+});
+
+$('#modalForm').addEventListener('submit', e => {
+  e.preventDefault();
+  // modal form also posts to Netlify as contact
+  e.target.setAttribute('name', 'contact');
+  if (!e.target.querySelector('[name=form-name]')) {
+    const h = document.createElement('input');
+    h.type = 'hidden'; h.name = 'form-name'; h.value = 'contact';
+    e.target.appendChild(h);
+  }
+  submitContact(e.target, '#modalSend');
+});
+
+
+/* Color palette picker (inline bar next to Admin) */
+(function() {
+  const darkPalettes = {
+    teal:   { bg:'#0a1210', bg2:'#0e1c18', panel:'rgba(14,28,24,0.78)', panel2:'#122420', text:'#e8f5f0', muted:'#8aada0', a:'#2dd4a8', b:'#22d3ee', c:'#5eead4' },
+    violet: { bg:'#07050d', bg2:'#0c0914', panel:'rgba(18,13,31,0.75)', panel2:'#110b20', text:'#f7f4ff', muted:'#a9a0c0', a:'#9b5cff', b:'#3d7cff', c:'#b57bff' },
+    ocean:  { bg:'#070b14', bg2:'#0a1220', panel:'rgba(12,20,36,0.8)', panel2:'#0f1a2e', text:'#e8f1ff', muted:'#8aa0c0', a:'#38bdf8', b:'#6366f1', c:'#7dd3fc' },
+    sunset: { bg:'#120a08', bg2:'#1a0e0c', panel:'rgba(36,18,14,0.8)', panel2:'#2a1410', text:'#fff5f0', muted:'#c4a090', a:'#fb923c', b:'#f43f5e', c:'#fdba74' },
+    rose:   { bg:'#120814', bg2:'#1a0c1c', panel:'rgba(36,14,32,0.8)', panel2:'#2a1230', text:'#fdf2f8', muted:'#c090b0', a:'#f472b6', b:'#e879f9', c:'#f9a8d4' },
+    lime:   { bg:'#0a1208', bg2:'#101c0c', panel:'rgba(18,32,14,0.8)', panel2:'#162814', text:'#f0fdf4', muted:'#90b090', a:'#a3e635', b:'#34d399', c:'#bef264' },
+    gold:   { bg:'#12100a', bg2:'#1a160c', panel:'rgba(36,30,14,0.8)', panel2:'#2a2410', text:'#fffbeb', muted:'#c0b080', a:'#fbbf24', b:'#f59e0b', c:'#fcd34d' },
+    mono:   { bg:'#0c0e12', bg2:'#12151a', panel:'rgba(20,24,30,0.85)', panel2:'#1a1e26', text:'#f1f5f9', muted:'#94a3b8', a:'#94a3b8', b:'#e2e8f0', c:'#cbd5e1' }
+  };
+  const lightPalettes = {
+    teal:   { bg:'#f0faf6', bg2:'#e4f5ee', panel:'rgba(255,255,255,0.92)', panel2:'#ffffff', text:'#0f1f1a', muted:'#3d5c52', a:'#0d9488', b:'#0891b2', c:'#0f766e' },
+    violet: { bg:'#f4f1fa', bg2:'#ebe6f5', panel:'rgba(255,255,255,0.9)', panel2:'#ffffff', text:'#14101c', muted:'#4a4458', a:'#7c3aed', b:'#2563eb', c:'#6d28d9' },
+    ocean:  { bg:'#f0f7ff', bg2:'#e4eefc', panel:'rgba(255,255,255,0.92)', panel2:'#ffffff', text:'#0f172a', muted:'#475569', a:'#0284c7', b:'#4f46e5', c:'#0369a1' },
+    sunset: { bg:'#fff7f2', bg2:'#ffefe6', panel:'rgba(255,255,255,0.92)', panel2:'#ffffff', text:'#1c1008', muted:'#7c4a30', a:'#ea580c', b:'#e11d48', c:'#c2410c' },
+    rose:   { bg:'#fdf4f8', bg2:'#fce8f2', panel:'rgba(255,255,255,0.92)', panel2:'#ffffff', text:'#1a0a14', muted:'#6b3d58', a:'#db2777', b:'#c026d3', c:'#9d174d' },
+    lime:   { bg:'#f4fdf0', bg2:'#e8f8e0', panel:'rgba(255,255,255,0.92)', panel2:'#ffffff', text:'#142010', muted:'#3f5c38', a:'#65a30d', b:'#059669', c:'#4d7c0f' },
+    gold:   { bg:'#fffbeb', bg2:'#fef3c7', panel:'rgba(255,255,255,0.92)', panel2:'#ffffff', text:'#1c1408', muted:'#6b5420', a:'#d97706', b:'#b45309', c:'#a16207' },
+    mono:   { bg:'#f8fafc', bg2:'#f1f5f9', panel:'rgba(255,255,255,0.95)', panel2:'#ffffff', text:'#0f172a', muted:'#475569', a:'#64748b', b:'#334155', c:'#475569' }
+  };
+  function applyPalette(name) {
+    const isLight = document.body.classList.contains('light');
+    const p = (isLight ? lightPalettes : darkPalettes)[name] || darkPalettes.teal;
+    const r = document.documentElement.style;
+    r.setProperty('--bg', p.bg);
+    r.setProperty('--bg2', p.bg2);
+    r.setProperty('--panel', p.panel);
+    r.setProperty('--panel2', p.panel2);
+    r.setProperty('--text', p.text);
+    r.setProperty('--muted', p.muted);
+    r.setProperty('--purple', p.a);
+    r.setProperty('--cobalt', p.b);
+    r.setProperty('--accent', p.c);
+    document.body.setAttribute('data-palette', name);
+    localStorage.palette = name;
+    document.querySelectorAll('.swatch').forEach(s => s.classList.toggle('active', s.dataset.palette === name));
+    const meta = document.querySelector('meta[name=theme-color]');
+    if (meta) meta.content = p.bg;
+  }
+  document.querySelectorAll('#themeBar .swatch').forEach(s => {
+    s.onclick = () => applyPalette(s.dataset.palette);
+  });
+  applyPalette(localStorage.palette || 'teal');
+  $('#theme').onclick = () => {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    $('#theme').textContent = isLight ? '☾' : '☼';
+    localStorage.theme = isLight ? 'light' : 'dark';
+    applyPalette(localStorage.palette || 'teal');
+  };
+})();
+
+/* ═══ ADVANCED SYSTEMS ═══ */
+
+/* Custom cursor */
+(function() {
+  if (window.matchMedia('(pointer: coarse)').matches || innerWidth < 900) return;
+  document.body.classList.add('has-cursor');
+  const dot = $('#cursor'), ring = $('#cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  window.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top = my + 'px';
+  });
+  (function follow() {
+    rx += (mx - rx) * 0.18;
+    ry += (my - ry) * 0.18;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(follow);
+  })();
+  const hoverSel = 'a, button, .btn, .choice, .project, .service, .iconbtn, input, textarea, select, .mascot';
+  document.querySelectorAll(hoverSel).forEach(el => {
+    el.addEventListener('mouseenter', () => { dot.classList.add('hover'); ring.classList.add('hover'); });
+    el.addEventListener('mouseleave', () => { dot.classList.remove('hover'); ring.classList.remove('hover'); });
+  });
+})();
+
+/* Spotlight on cards */
+document.querySelectorAll('.service, .step, .reason, .skill-card, .project, .big').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+});
+
+/* Nav scrolled state */
+window.addEventListener('scroll', () => {
+  $('#nav').classList.toggle('scrolled', scrollY > 40);
+}, { passive: true });
+$('#nav').classList.toggle('scrolled', scrollY > 40);
+
+/* Stagger reveal delays */
+$$('.reveal').forEach((el, i) => {
+  el.style.setProperty('--delay', ((i % 6) * 70) + 'ms');
+});
+
+/* Particle field */
+(function() {
+  const canvas = $('#particles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [];
+  const COUNT = Math.min(55, Math.floor(innerWidth / 28));
+
+  function resize() {
+    w = canvas.width = innerWidth;
+    h = canvas.height = innerHeight;
+  }
+  function init() {
+    particles = Array.from({ length: COUNT }, () => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      r: Math.random() * 1.8 + 0.4,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      a: Math.random() * 0.5 + 0.15
+    }));
+  }
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    const isLight = document.body.classList.contains('light');
+    const col = isLight ? '13, 148, 136' : '45, 212, 168';
+    particles.forEach((p, i) => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${col},${p.a})`;
+      ctx.fill();
+      for (let j = i + 1; j < particles.length; j++) {
+        const q = particles[j];
+        const dx = p.x - q.x, dy = p.y - q.y;
+        const d = Math.hypot(dx, dy);
+        if (d < 120) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = `rgba(${col},${0.12 * (1 - d / 120)})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+  resize(); init(); draw();
+  window.addEventListener('resize', () => { resize(); init(); });
+})();
+
+/* Magnetic buttons */
+document.querySelectorAll('.btn.primary').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r = btn.getBoundingClientRect();
+    const x = e.clientX - r.left - r.width / 2;
+    const y = e.clientY - r.top - r.height / 2;
+    btn.style.transform = `translate(${x * 0.18}px, ${y * 0.22}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = '';
+  });
+});
+
+/* Project card subtle tilt */
+document.addEventListener('mousemove', e => {
+  document.querySelectorAll('.project').forEach(card => {
+    const r = card.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) return;
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform = `translateY(-6px) perspective(800px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
+  });
+});
+document.querySelectorAll('.project').forEach(card => {
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+});
+</script>
+</body>
+</html>
